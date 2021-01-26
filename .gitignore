@@ -117,3 +117,10 @@ venv.bak/
 # data
 data/*
 !data/.gitkeep
+
+# output
+output/*
+!output/.gitkeep
+
+# log
+log/*
