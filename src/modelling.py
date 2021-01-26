@@ -10,7 +10,11 @@ from functions import load_data, preprocess_data
 import config as config
 
 import logging
+import os
 
+
+if not os.path.exists('../log'):
+    os.makedirs('../log')
 
 logging.basicConfig(
     filename='../log/modelling.log',
@@ -89,6 +93,9 @@ history = model.fit(
 
 logging.info(f'The training accuracy is {round(history.history["acc"][-1], 4)}')
 logging.info(f'The validation accuracy is {round(history.history["val_acc"][-1], 4)}')
+
+if not os.path.exists('../output'):
+    os.makedirs('../output')
 
 model.save('../output/trained_model')
 
