@@ -44,6 +44,9 @@ X_train, y_train = get_data('../data/train', config.LABELS, config.IMG_SIZE)
 X_val, y_val = get_data('../data/val', config.LABELS, config.IMG_SIZE)
 X_test, y_test = get_data('../data/test', config.LABELS, config.IMG_SIZE)
 
+if not os.path.exists('../data/processed_data'):
+    os.makedirs('../data/processed_data')
+
 with open('../data/processed_data/X_train.pkl', 'wb') as f:
     pickle.dump(X_train, f)
 
